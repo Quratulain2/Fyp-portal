@@ -1,3 +1,4 @@
+//Not for use
 import React, { Component } from 'react'
 import {AdminMenu} from "./Admin_Menu";
 import {Link} from 'react-router-dom';
