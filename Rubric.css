@@ -3,21 +3,38 @@
 }
 
 #table-div1{
-   
-    /* background-color: rgb(240, 242, 248); */
-    /* background: linear-gradient(rgba(113, 182, 197, 0.945),rgb(190, 205, 224)); */
-    box-shadow: 7px 7px 60px rgba(55, 55, 122, 0.301);
+    box-shadow: 7px 7px 60px rgba(85, 85, 151, 0.301);
     color:black;
-  /* margin-top: 4%;
-  margin-right: 9%;
-  margin-left: 9%; */
   width: auto;
   height:auto;
   margin-top: 0px;
-  /* margin-left:5px; */
   }
 
+  textarea{
+      background-color: transparent;
+      border: none;
+      margin: 5px;
+  }
 
+  #rubric_submit_btn {
+
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    border-radius: 4px;
+    padding: 14px 40px;
+    background-color:rgb(43, 43, 148);
+    border:none;
+    font-size:20px;
+    font-weight:"bold";
+    color: white;
+
+  }
+
+  #rubric_submit_btn:hover {
+    box-shadow: 0 12px 10px 0 rgba(69, 53, 143, 0.24), 0 17px 50px 0 rgba(89, 81, 136, 0.199);
+  }
+  
 .detail td{
     border: 1px solid black;
     text-align: center;
@@ -41,10 +58,7 @@ select{
 table{
     width:100%; 
 }
-/* .val{
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
-} */
+
 
 #inf_thead{
     text-align: center;
