@@ -115,15 +115,18 @@ function Rubric() {
                    
                            
        <Form>
-          {/* This Individual Assessment component should render 3 times bcoz 3 group members */}
+          {/* This Individual Assessment component should render 3 times bcoz 3 group members  */}
            <Ind_Ass /> 
            
-           
+           <Ind_Ass/>
            
             <br></br>
           
-    <Group_Ass/>
-      
+          <Group_Ass/>
+
+            <br></br>
+     <button type="submit" class="btn btn-primary" id="rubric_submit_btn">Submit</button>
+            <br></br>
             </Form>
 
                     
