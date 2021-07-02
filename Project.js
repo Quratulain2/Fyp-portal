@@ -1,117 +1,118 @@
 import React, { useState } from "react";
-import { FaCentercode } from "react-icons/fa";
 import "./Project.css";
+ 
+function Project() {
+  // This use state was already defined in the code in video  so change according to our input fields i.e email etc
 
-function AddInput() {
   const [inputList, setInputList] = useState([{ firstName: "", lastName: "" }]);
-
-// handle input change
-const handleInputChange = (e, index) => {
+ 
+  // handle input change
+  const handleInputChange = (e, index) => {
     const { name, value } = e.target;
     const list = [...inputList];
     list[index][name] = value;
     setInputList(list);
   };
-  
+ 
   // handle click event of the Remove button
   const handleRemoveClick = index => {
     const list = [...inputList];
     list.splice(index, 1);
     setInputList(list);
   };
-  
+ 
   // handle click event of the Add button
   const handleAddClick = () => {
     setInputList([...inputList, { firstName: "", lastName: "" }]);
   };
   return (
-    <div className="container">
-      <h3 style={{ color:"blue",textAlign:"center" }}>PROJECT DETAILS</h3>
-    <form>
-      <tr >
-        <td colspan='2'>
-      <input  type="text"
-              name="Project Title"
-              placeholder="Project Title"
-            //   value={x.firstName}
-            //   onChange={e => handleInputChange(e, i)}
-            /></td>
-            </tr>
-            <tr>
-            <td><input
-            type="text"
-              name="Internal"
-              placeholder="Internal"
-            //   value={x.firstName}
-            //   onChange={e => handleInputChange(e, i)}
+    <div className="prj_div">
+      <form className="container1">
+        <h1 id="prj_heading">FYP PROJECT DETAILS</h1>
+     
+      <table>
+        <tr>
+          <td>
+      <input
+              type="text"
+              name="projectTitle"
+        placeholder="Title"
+        className="prj_inp" required
+        autoFocus
+        
+        // className="form-control"
+              // value={x.projectTitle}
+              // onChange={e => handleInputChange(e, i)}
             /></td>
             <td>
             <input
             type="text"
-              name="External"
-              placeholder="External"
-            //   value={x.firstName}
-            //   onChange={e => handleInputChange(e, i)}
+              name="internal"
+        placeholder="Internal Supervisor"
+        className="prj_inp"
+        required
+              // value={x.internal}
+              // onChange={e => handleInputChange(e, i)}
+            /></td>
+            <td>
+            <input
+            type="text"
+              name="external"
+        placeholder="External Supervisor"
+        className="prj_inp"
+        required
+              // value={x.external}
+              //  onChange={e => handleInputChange(e, i)}
             />
             </td>
             </tr>
-            </form>
-           
+            </table>
+
+          
+            {/* Logic for Dynamically Add input field */}
+
       {inputList.map((x, i) => {
         return (
-            
           <div className="box">
-             <tr>
-               <td>
+           
             <input
             type="text"
-              className="ml10"
-              name="Student"
-              placeholder="Student"
-              value={x.lastName}
-              onChange={e => handleInputChange(e, i)
-              
-              }
-
-              
-            /> 
-            </td>
-            <td>
-            <input
-            type="text"
-              className="ml10"
-              name="Email"
-              placeholder="Email"
-              value={x.lastName}
-              onChange={e => handleInputChange(e, i)
-              
-              }
-              
+              name="firstName"
+        placeholder="Full Name"
+        className="prj_inp"
+        required
+              value={x.firstName}
+              onChange={e => handleInputChange(e, i)}
             />
-            </td>
-            </tr> 
-            <tr>
-              <td >
-            <div className="btn-box">
-              {inputList.length !== 1 && <button
-                className="mr10"  class="btn btn-secondary" id="remove"
-                onClick={() => handleRemoveClick(i)}>X</button>}
-              {inputList.length - 1 === i && <button onClick={handleAddClick}  class="btn btn-primary" id="add" >Add</button>}
-            </div>
-            </td>
+            <input
+            type="email"
+              name="email"
+        placeholder="Email"
+        className="prj_inp"
+        style={{textTransform:"lowercase"}}
+        required
+              value={x.email}
+              onChange={e => handleInputChange(e, i)}
+            />
             
-            </tr>
+            
+           {/* Add and Remove button dynamically */}
+              {inputList.length !== 1 && <button className="add_rem_btn" style={{backgroundColor:"transparent",
+              border:"none",color:"grey",fontSize:"40px",fontWeight:"bold"}}
+                
+                onClick={() => handleRemoveClick(i)}>-</button>}
+              {inputList.length - 1 === i && <button className="add_rem_btn" style={{backgroundColor:"transparent",
+              border:"none",color:"grey",fontSize:"30px",fontWeight:"bold"}}  onClick={handleAddClick}>+</button>}
             
           </div>
-          
         );
       })}
+      <br></br>
+      <button type="submit" class="btn btn-primary" style={{width:"100%",display:"block",fontSize:"20px",border:"none",backgroundColor:"rgb(43, 43, 148)"}} >Insert</button>
       {/* <div style={{ marginTop: 20 }}>{JSON.stringify(inputList)}</div> */}
-      <button type="submit" className="btn btn-primary" id="insert" >Insert</button>
-      
-      
+      </form>
     </div>
-  );
-}
+    
+  );}
 
-export default AddInput;
+export default Project;
