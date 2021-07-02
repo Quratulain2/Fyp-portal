@@ -85,6 +85,16 @@ function Project() {
               onChange={e => handleInputChange(e, i)}
             />
             <input
+            type="text"
+              name="roll_no"
+        placeholder="Roll No"
+        className="prj_inp"
+        style={{width:"22%"}}
+        required
+              value={x.rollno}
+              onChange={e => handleInputChange(e, i)}
+            />
+            <input
             type="email"
               name="email"
         placeholder="Email"
