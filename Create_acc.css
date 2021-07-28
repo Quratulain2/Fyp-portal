@@ -8,6 +8,11 @@ a{
 
     text-align: center;
     float: right;
+    
+        color: rgba(43, 43, 148, 0.829);
+        font-size: 18px;
+        
+   
     /* color: blue; */
 
 }
