@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import "./Create_acc.css";
+// import "./Create_acc.css";
 export class Create_acc extends Component {
     render() {
         return (
@@ -20,7 +20,10 @@ export class Create_acc extends Component {
     <input type="checkbox" class="form-check-input" id="exampleCheck1"/>
     <label class="form-check-label" for="exampleCheck1">Check me out</label>
   </div> */}
-  <button type="submit" class="btn btn-primary">Sign Up</button>
+ <button class="btn btn primary" style={{padding: "14px 40px",width:"100%",
+ backgroundColor:"rgb(43, 43, 148)",border:"none",fontSize:"20px",fontWeight:"bold",color:"white"}}> Sign Up
+  </button>
+  <a href="/logout" >Login?</a> 
 </form>
             </div>
         )
